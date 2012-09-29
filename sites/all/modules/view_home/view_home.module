@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the View home feature.
+ */
+
+include_once 'view_home.features.inc';
