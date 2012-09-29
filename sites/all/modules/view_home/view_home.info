@@ -2,6 +2,7 @@ name = View home
 description = Collezione dei CT iniziativa
 core = 7.x
 package = hereweco
+php = 5.2.4
 version = 7.x-1.0
 project = view_home
 dependencies[] = ctools
