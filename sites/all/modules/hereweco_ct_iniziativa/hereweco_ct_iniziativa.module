@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the hereweco_ct_iniziativa feature.
+ */
+
+include_once 'hereweco_ct_iniziativa.features.inc';
