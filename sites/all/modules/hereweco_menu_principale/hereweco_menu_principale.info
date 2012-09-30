@@ -1,0 +1,10 @@
+name = hereweco_menu_principale
+description = Aggiunta delle voci al menu principale (visibile anche da guest)
+core = 7.x
+package = hereweco
+version = 7.x-1.0
+project = hereweco_menu_principale
+dependencies[] = features
+dependencies[] = menu
+features[features_api][] = api:1
+features[menu_custom][] = main-menu
