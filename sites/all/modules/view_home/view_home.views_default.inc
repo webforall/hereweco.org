@@ -43,7 +43,14 @@ function view_home_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
   $handler->display->display_options['style_plugin'] = 'fluid_grid';
-  $handler->display->display_options['style_options']['items_width'] = '200';
+  $handler->display->display_options['style_options']['items_width'] = '';
+  $handler->display->display_options['style_options']['advanced_layout'] = array(
+    'align' => TRUE,
+    'margins' => TRUE,
+  );
+  $handler->display->display_options['style_options']['list_alignment'] = 'center';
+  $handler->display->display_options['style_options']['items_h_margin'] = '6px';
+  $handler->display->display_options['style_options']['items_v_margin'] = '6px';
   $handler->display->display_options['style_options']['box_shadow'] = '0';
   $handler->display->display_options['style_options']['border_radius'] = '0';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -53,26 +60,72 @@ function view_home_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Campo: Contenuto: Link Facebook */
   $handler->display->display_options['fields']['field_link_facebook']['id'] = 'field_link_facebook';
   $handler->display->display_options['fields']['field_link_facebook']['table'] = 'field_data_field_link_facebook';
   $handler->display->display_options['fields']['field_link_facebook']['field'] = 'field_link_facebook';
   $handler->display->display_options['fields']['field_link_facebook']['label'] = '';
+  $handler->display->display_options['fields']['field_link_facebook']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_link_facebook']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_facebook']['field_api_classes'] = TRUE;
+  /* Campo: Contenuto: Descrizione */
+  $handler->display->display_options['fields']['field_descrizione']['id'] = 'field_descrizione';
+  $handler->display->display_options['fields']['field_descrizione']['table'] = 'field_data_field_descrizione';
+  $handler->display->display_options['fields']['field_descrizione']['field'] = 'field_descrizione';
+  $handler->display->display_options['fields']['field_descrizione']['label'] = '';
+  $handler->display->display_options['fields']['field_descrizione']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_descrizione']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_descrizione']['field_api_classes'] = TRUE;
   /* Campo: Contenuto: Link Twitter */
   $handler->display->display_options['fields']['field_link_twitter']['id'] = 'field_link_twitter';
   $handler->display->display_options['fields']['field_link_twitter']['table'] = 'field_data_field_link_twitter';
   $handler->display->display_options['fields']['field_link_twitter']['field'] = 'field_link_twitter';
   $handler->display->display_options['fields']['field_link_twitter']['label'] = '';
+  $handler->display->display_options['fields']['field_link_twitter']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_link_twitter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_twitter']['field_api_classes'] = TRUE;
   /* Campo: Contenuto: Sito web */
   $handler->display->display_options['fields']['field_sito_web']['id'] = 'field_sito_web';
   $handler->display->display_options['fields']['field_sito_web']['table'] = 'field_data_field_sito_web';
   $handler->display->display_options['fields']['field_sito_web']['field'] = 'field_sito_web';
   $handler->display->display_options['fields']['field_sito_web']['label'] = '';
+  $handler->display->display_options['fields']['field_sito_web']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_sito_web']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sito_web']['field_api_classes'] = TRUE;
+  /* Campo: Contenuto: Logo */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  /* Campo: Globale: Testo personalizzato */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[title]
+[field_sito_web]
+[field_descrizione]
+[field_link_twitter]
+[field_link_facebook]
+';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Criterio di ordinamento: Contenuto: Data di inserimento */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['granularity'] = 'minute';
   /* Criterio del filtro: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -111,6 +164,12 @@ function view_home_views_default_views() {
     t('‹ precedente'),
     t('seguente ›'),
     t('ultima »'),
+    t('[title]
+[field_sito_web]
+[field_descrizione]
+[field_link_twitter]
+[field_link_facebook]
+'),
     t('Page'),
   );
   $export['home'] = $view;
