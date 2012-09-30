@@ -29,7 +29,7 @@ a:link, a:visited {
 }
 
 .view-content ul.views-fluid-grid-list li.views-fluid-grid-item .views-field-nothing span {
-    color: #333333
+    color: #333333;
     font-size: 16px;
 }
 
