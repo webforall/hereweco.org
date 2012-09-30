@@ -1,2 +1,31 @@
-/* This file will hold styles for the mobile version of your website (mobile first). */
-/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+.view-content {
+    margin-top: 100px;
+}
+
+.view-content ul.views-fluid-grid-list li.views-fluid-grid-item {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 0 none;
+}
+
+.view-content ul.views-fluid-grid-list li.clicked {
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.view-content ul.views-fluid-grid-list li.views-fluid-grid-item .views-field-field-image {
+    cursor: pointer;
+}
+
+.view-content ul.views-fluid-grid-list li.views-fluid-grid-item .views-field-nothing {
+    display: none;
+}
+
+.view-content ul.views-fluid-grid-list li.views-fluid-grid-item .views-field-nothing span {
+    color: #666666;
+    font-size: 16px;
+}
+
+.view-content ul.views-fluid-grid-list li.views-fluid-grid-item .views-field-nothing span .field{
+    font-size: 11px;
+}
