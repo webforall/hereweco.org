@@ -1,3 +1,8 @@
+a:link, a:visited {
+    color: #0062A0;
+    text-decoration: none;
+}
+
 .view-content {
     margin-top: 100px;
 }
@@ -5,6 +10,8 @@
 .view-content ul.views-fluid-grid-list li.views-fluid-grid-item {
     background: none repeat scroll 0 0 #FFFFFF;
     border: 0 none;
+    font-family: monospace;
+    max-width: 300px;
 }
 
 .view-content ul.views-fluid-grid-list li.clicked {
@@ -22,10 +29,51 @@
 }
 
 .view-content ul.views-fluid-grid-list li.views-fluid-grid-item .views-field-nothing span {
-    color: #666666;
+    color: #333333
     font-size: 16px;
 }
 
 .view-content ul.views-fluid-grid-list li.views-fluid-grid-item .views-field-nothing span .field{
     font-size: 11px;
+}
+
+.field-name-field-link-twitter {
+    
+}
+
+.field-name-field-link-twitter a {
+    background: url("../images/twitter_1.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    height: 32px;
+    margin: 0 3px;
+    opacity: 0.7;
+    overflow: hidden;
+    text-indent: -999999px;
+    width: 32px;
+}
+
+.field-name-field-link-facebook {}
+
+.field-name-field-link-facebook a {
+    background: url("../images/fb_1.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    height: 32px;
+    margin: 0 3px;
+    opacity: 0.7;
+    overflow: hidden;
+    text-indent: -999999px;
+    width: 32px;
+}
+
+.field-name-field-link-facebook a:hover,
+.field-name-field-link-twitter a:hover {
+    opacity: 1;
+}
+
+.field-name-field-descrizione {
+    line-height: 12px;
+    margin: 15px 0;
+    padding: 10px;
 }
